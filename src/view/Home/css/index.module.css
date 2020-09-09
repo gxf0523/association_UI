@@ -1,0 +1,206 @@
+.homeBox{
+    background:#fff;
+}
+.centerBox{
+    width: 1170px;
+    margin: 0 auto 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.spinBox{
+    width: 1170px;
+    height: 550px;
+    margin: 0 auto;
+    position: relative;
+}
+:global(.ant-spin-spinning){
+    position: absolute!important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    z-index: 1;
+    opacity: 1;
+}
+.homeLeft{
+    width: 770px;
+}
+.homeLeftTop,.homeRightTop,.homeLeftBot,.homeRightBot{
+    width: 100%;
+    height: 430px;
+    margin-top: 30px;
+}
+.homeRightTop,.homeLeftBot,.homeRightBot{
+    background:rgba(255,255,255,.6);
+    border:1px solid rgba(204,204,204,.6);
+}
+.moduleTitle{
+    margin: 16px 41px 0 30px;
+    font-size:18px;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(153,0,0,1);
+    padding-bottom: 9px;
+    border-bottom:1px solid rgba(204,204,204,1);
+}
+.moduleTitle>span{
+    padding-bottom: 7px;
+    border-bottom: 4px solid #990000;
+}
+.homeRightjianjie_top{
+    margin: 29px 41px 29px 30px;
+    display: flex;
+}
+.homeRightjianjie_img{
+    width: 100px;
+    height: 100px;
+    background: red;
+    margin-right: 20px;
+}
+.homeRightjianjie_img>img{
+    width: 100%;
+    height: 100%;
+}
+.homeRightjianjie_title{
+    margin-top: 11px;
+    font-size:20px;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.homeRightjianjie_title>span:nth-child(2){
+    margin-left: 10px;
+    font-size:14px;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+}
+.homeRightjianjie_bot{
+    margin: 0 41px 0 30px;
+    font-size:14px;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+.homeRightjianjie_xiaojie{
+    width: 177px;
+    margin-top: 20px;
+    font-size:14px;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+.homeRightBot_list{
+    margin: 40px 41px 0 30px;
+}
+.homeRightBot_list>li{
+    width: 279px;
+    margin-bottom: 22px;
+    font-size:16px;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.homeRightBot_list>li>span{
+    flex-shrink: 0;
+    margin-right: 9px;
+    width:20px;
+    height:20px;
+    background:rgba(204,204,204,1);
+    border-radius:50%;
+    font-size:12px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.homeLeftBotdec{
+    margin:29px 41px 0 30px;
+    display: flex;
+}
+.homeLeftBotdec_img{
+    width:270px;
+    height:316px;
+    background: red;
+    margin-right: 30px;
+}
+.homeLeftBotdec_list>li{
+    width: 396px;
+    margin-bottom: 23px;
+    font-size:16px;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.homeLeftBotdec_list>li:hover,.homeRightBot_list>li:hover{
+    color: rgba(153,0,0,1);
+}
+.homeLeftBotdec_list>li:hover>span,.homeRightBot_list>li:hover>span{
+    background:rgba(153,0,0,1)!important;
+}
+.overhidden{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.homeLeftBotdec_list>li:first-child{
+    margin-top: 6px;
+}
+.homeLeftBotdec_list>li>span{
+    margin-right: 12px;
+    flex-shrink: 0;
+    width:8px;
+    height:8px;
+    background:rgba(204,204,204,1);
+    border-radius:50%;
+    display: flex;
+}
+.homeLeftTop{
+    position: relative;
+}
+.homeLeftTop div,.homeLeftTop div img{
+    width: 100%;
+    height: 100%;
+}
+.homeDotsBox{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px!important;
+    background:rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.homeDotsText{
+    margin-left: 40px;
+    font-size:18px;
+    font-family:PingFang SC;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+.homeDotsDian{
+    margin-right: 80px;
+    display: flex;
+}
+.homeDotsDian span{
+    width:12px;
+    height:12px;
+    background:rgba(255,255,255,1);
+    border-radius:50%;
+    margin-left: 14px;
+    display: flex;
+    cursor: pointer;
+}
+.homeRight{
+    width: 370px;
+}

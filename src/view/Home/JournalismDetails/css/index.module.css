@@ -1,0 +1,57 @@
+.detailsBox{
+    background:#fff;
+}
+.centerBox{
+    width: 1170px;
+    margin: 0 auto 60px;
+}
+.textTitle{
+    font-size: 14px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    padding: 31px 0 41px 0;
+}
+.PageTitle{
+    margin-bottom: 22px;
+    text-align: center;
+    font-size: 24px;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+}
+.PageTime{
+    margin-bottom: 41px;
+    text-align: center;
+    font-size: 14px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #999999;
+}
+.PageCenter{
+    font-size: 16px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    padding-bottom: 62px;
+    border-bottom: 1px solid #CBCBCB;
+}
+
+.pageBtnBox{
+    margin-top: 60px;
+}
+.pageBtnBox>p{
+    font-size: 16px;
+    font-family: PingFang SC;
+    color: #333333;
+    cursor: pointer;
+}
+.pageBtnBox>p:hover{
+    color: rgba(153,0,0,1);
+}
+.pageBtnBox>p>span{
+    font-weight: 500;
+}
+.pageBtnBox>p:first-of-type{
+    margin-bottom: 8px;
+}
