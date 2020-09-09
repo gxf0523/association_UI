@@ -179,7 +179,9 @@ class Home extends Component {
                                         </div>
                                         <div id="descriptionFa" className={styles.homeRightjianjie_bot}>
                                             <div id="descriptionChi" className="dynamicDetails-content" dangerouslySetInnerHTML={{ __html: article_suo_list && article_suo_list.description }}></div>
-                                            <div className={styles.ellipsisDian}>...</div>
+                                            {
+                                                isEllipsis && <div className={styles.ellipsisDian}>...</div>
+                                            }
                                         </div>
                                     </div>
                                 </div>
