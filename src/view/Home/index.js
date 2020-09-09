@@ -68,13 +68,26 @@ class Home extends Component {
             },
             dotsIndex: 1,
             spinning: true,
+            isEllipsis: false
+
         }
     }
     componentDidMount() {
+        let that = this;
         Plublic.backTop();
         this.setState({
             spinning: false
         })
+        setTimeout(function () {
+            var descriptionFa = document.getElementById('descriptionFa');
+        var descriptionChi = document.getElementById('descriptionChi');
+        if(descriptionChi.getBoundingClientRect().height>descriptionFa.getBoundingClientRect().height){
+            that.setState({
+                isEllipsis: true
+            })
+        }
+        }, 100);
+
     }
     afterChange = (e) => {
         this.setState({
@@ -88,7 +101,7 @@ class Home extends Component {
         window.location.href = '/Home/JournalismDetails?id='+item.id;
     }
     render() {
-        const { dotsIndex, spinning, homeListData } = this.state;
+        const { dotsIndex, spinning, homeListData ,isEllipsis } = this.state;
         const article_suo_list = homeListData && homeListData.article_suo_list && homeListData.article_suo_list[0];
         const Rotation_news_list = homeListData && homeListData.Rotation_news_list && homeListData.Rotation_news_list[0];
         const lunboSetting = {
@@ -164,8 +177,9 @@ class Home extends Component {
                                                 <div className={styles.homeRightjianjie_xiaojie}>{article_suo_list && article_suo_list.desc}</div>
                                             </div>
                                         </div>
-                                        <div style={Plublic.lineOverflow(8)} className={styles.homeRightjianjie_bot}>
-                                            <div className="dynamicDetails-content" dangerouslySetInnerHTML={{ __html: article_suo_list && article_suo_list.description }}></div>
+                                        <div id="descriptionFa" className={styles.homeRightjianjie_bot}>
+                                            <div id="descriptionChi" className="dynamicDetails-content" dangerouslySetInnerHTML={{ __html: article_suo_list && article_suo_list.description }}></div>
+                                            <div className={styles.ellipsisDian}>...</div>
                                         </div>
                                     </div>
                                 </div>

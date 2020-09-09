@@ -81,6 +81,19 @@
     font-family:PingFang SC;
     font-weight:400;
     color:rgba(153,153,153,1);
+    height: 176px;
+    overflow: hidden;
+    position: relative;
+}
+.ellipsisDian{
+    position: absolute;
+    width: 17px;
+    height: 14px;
+    bottom: 5px;
+    right: 0;
+    background: #fff;
+    text-align: center;
+    color:rgba(153,153,153,1);
 }
 .homeRightjianjie_xiaojie{
     width: 177px;
