@@ -31,12 +31,8 @@ class JournalismDetails extends Component {
     componentDidMount() {
         Plublic.backTop();
     }
-    // 上一篇
-    onPrevPiece = (id) => {
-        window.location.href = '/Home/JournalismDetails?id=' + id;
-    }
-    // 下一篇
-    onNextPiece = (id) => {
+    // 上一篇   下一篇
+    onPiece = (id) => {
         window.location.href = '/Home/JournalismDetails?id=' + id;
     }
     render() {
@@ -55,8 +51,8 @@ class JournalismDetails extends Component {
                         <div className="dynamicDetails-content" dangerouslySetInnerHTML={{ __html: detail.description }}></div>
                     </div>
                     <div className={styles.pageBtnBox}>
-                        <p onClick={() => this.onPrevPiece(up.id)}><span>上一篇：</span>{up.title}</p>
-                        <p onClick={() => this.onNextPiece(next.id)}><span>下一篇：</span>{next.title}</p>
+                        <p onClick={() => this.onPiece(up.id)}><span>上一篇：</span>{up.title}</p>
+                        <p onClick={() => this.onPiece(next.id)}><span>下一篇：</span>{next.title}</p>
                     </div>
                 </div>
                 <Footer />
