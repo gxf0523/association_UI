@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import styles from "./css/index.module.css"
+import styles from "./css/index.module.css";
+
 class Footer extends Component {
     constructor(props) {
         super(props);

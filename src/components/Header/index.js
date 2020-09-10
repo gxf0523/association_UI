@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./css/index.module.css"
+import styles from "./css/index.module.css";
 const graduateLogo = require('../../common/img/graduate_logo.png');
 const associationLogo = require('../../common/img/association_logo.png');
 

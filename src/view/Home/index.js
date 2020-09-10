@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import styles from "./css/index.module.css"
-import Plublic from '../../common/js/Plublic'
+import styles from "./css/index.module.css";
+import Plublic from '../../common/js/Plublic';
 import { Carousel, Spin } from 'antd';
 import axios from "../../axios";
 import AsyncComponent from "../../common/js/AsyncComponent";
@@ -190,7 +190,7 @@ class Home extends Component {
                                     <ul className={styles.homeRightBot_list}>
                                         {
                                             homeListData.article_keyan_list && homeListData.article_keyan_list.map((item, index) => (
-                                                <li key={index}><span>{index + 1}</span><p className={styles.overhidden}>{item.title}</p></li>
+                                                <li key={index} onClick={() => this.onGoText(item)}><span>{index + 1}</span><p className={styles.overhidden}>{item.title}</p></li>
                                             ))
                                         }
                                     </ul>
