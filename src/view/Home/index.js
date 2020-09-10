@@ -80,12 +80,12 @@ class Home extends Component {
         })
         setTimeout(function () {
             var descriptionFa = document.getElementById('descriptionFa');
-        var descriptionChi = document.getElementById('descriptionChi');
-        if(descriptionChi.getBoundingClientRect().height>descriptionFa.getBoundingClientRect().height){
-            that.setState({
-                isEllipsis: true
-            })
-        }
+            var descriptionChi = document.getElementById('descriptionChi');
+            if (descriptionChi.getBoundingClientRect().height > descriptionFa.getBoundingClientRect().height) {
+                that.setState({
+                    isEllipsis: true
+                })
+            }
         }, 100);
 
     }
@@ -98,10 +98,10 @@ class Home extends Component {
         this.slider && this.slider.innerSlider.slickGoTo(index)
     }
     onGoText = (item) => {
-        window.location.href = '/Home/JournalismDetails?id='+item.id;
+        window.location.href = '/Home/JournalismDetails?id=' + item.id;
     }
     render() {
-        const { dotsIndex, spinning, homeListData ,isEllipsis } = this.state;
+        const { dotsIndex, spinning, homeListData, isEllipsis } = this.state;
         const article_suo_list = homeListData && homeListData.article_suo_list && homeListData.article_suo_list[0];
         const Rotation_news_list = homeListData && homeListData.Rotation_news_list && homeListData.Rotation_news_list[0];
         const lunboSetting = {
