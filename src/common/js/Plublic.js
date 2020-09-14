@@ -25,7 +25,9 @@ export default {
         }
         return obj;
     },
-    add0: function (m) { return m < 10 ? '0' + m : m },
+    timerFilter: function (m) {
+        return m < 10 ? '0' + m : m
+    },
     /**
      * 时间戳转化成时间格式
      */
@@ -35,6 +37,6 @@ export default {
         var year = time.getFullYear();
         var month = time.getMonth() + 1;
         var date = time.getDate();
-        return year + '年' + this.add0(month) + '月' + this.add0(date) + '日';
+        return year + '年' + this.timerFilter(month) + '月' + this.timerFilter(date) + '日';
     },
 }

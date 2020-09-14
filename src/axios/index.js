@@ -26,4 +26,7 @@ export default {
     getVideo: data => {
         return instance.get(prefixUrl + "/cc/getVideo/"+data, {});
     },
+    getHomeData: data => {
+        return instance.get(prefixUrl + ""+data, {});
+    },
 };
