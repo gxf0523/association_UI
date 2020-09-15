@@ -24,9 +24,9 @@ instance.interceptors.response.use(
 var prefixUrl = '';
 export default {
     getVideo: data => {
-        return instance.get(prefixUrl + "/cc/getVideo/"+data, {});
+        return instance.get(prefixUrl + "/cc/getVideo/" + data, {});
     },
     getHomeData: data => {
-        return instance.get(prefixUrl + ""+data, {});
+        return instance.get(prefixUrl + "" + data, {});
     },
 };
