@@ -75,13 +75,19 @@ class Home extends Component {
     componentDidMount() {
         let that = this;
         Plublic.backTop();
-        this.setState({
-            spinning: false
-        })
+        axios.getHomeData().then(res => {
+            console.log(res)
+            if (res && res.code === 1) {
+                that.setState({
+                    homeListData:res.data,
+                    spinning: false
+                })
+            }
+        });
         setTimeout(function () {
             var descriptionFa = document.getElementById('descriptionFa');
             var descriptionChi = document.getElementById('descriptionChi');
-            if (descriptionChi.getBoundingClientRect().height > descriptionFa.getBoundingClientRect().height) {
+            if (descriptionChi && descriptionFa && (descriptionChi.getBoundingClientRect().height > descriptionFa.getBoundingClientRect().height)) {
                 that.setState({
                     isEllipsis: true
                 })

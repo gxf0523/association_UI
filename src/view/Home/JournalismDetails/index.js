@@ -29,7 +29,16 @@ class JournalismDetails extends Component {
         }
     }
     componentDidMount() {
+        let that = this;
         Plublic.backTop();
+        axios.getDetailData().then(res => {
+            console.log(res)
+            if (res && res.code === 1) {
+                that.setState({
+                    newDetailData:res.data,
+                })
+            }
+        });
     }
     // 上一篇   下一篇
     onPiece = (id) => {

@@ -21,12 +21,15 @@ instance.interceptors.response.use(
         return Promise.reject(error);
     }
 );
-var prefixUrl = '';
+var prefixUrl = 'http://47.93.35.112:8099';
 export default {
     getVideo: data => {
         return instance.get(prefixUrl + "/cc/getVideo/" + data, {});
     },
     getHomeData: data => {
-        return instance.get(prefixUrl + "" + data, {});
+        return instance.get(prefixUrl + "/api.php");
     },
+    getDetailData: data => {
+        return instance.get(prefixUrl + "/api.php/index/detail/id/"+data);
+    }
 };
