@@ -55,3 +55,18 @@
 .pageBtnBox>p:first-of-type{
     margin-bottom: 8px;
 }
+.spinBox{
+    width: 1170px;
+    height: 550px;
+    margin: 0 auto;
+    position: relative;
+}
+:global(.ant-spin-spinning){
+    position: absolute!important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    z-index: 1;
+    opacity: 1;
+}

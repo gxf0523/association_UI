@@ -23,9 +23,6 @@ instance.interceptors.response.use(
 );
 var prefixUrl = 'http://47.93.35.112:8099';
 export default {
-    getVideo: data => {
-        return instance.get(prefixUrl + "/cc/getVideo/" + data, {});
-    },
     getHomeData: data => {
         return instance.get(prefixUrl + "/api.php");
     },
