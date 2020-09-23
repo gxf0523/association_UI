@@ -24,9 +24,16 @@ instance.interceptors.response.use(
 var prefixUrl = 'http://47.93.35.112:8099';
 export default {
     getHomeData: data => {
-        return instance.get(prefixUrl + "/api.php");
+        return instance.get(prefixUrl + "/api/index/index");
     },
     getDetailData: data => {
-        return instance.get(prefixUrl + "/api.php/index/detail/id/"+data);
+        return instance.get(prefixUrl + "/api/index/detail/id/"+data);
+    },
+    getCateData: data => {
+        return instance.get(prefixUrl + "/api/index/get_category");
+    },
+    getCateDetailData: data => {
+        return instance.get(prefixUrl + "/api/index/get_cate_detail/id/"+data);
     }
+
 };

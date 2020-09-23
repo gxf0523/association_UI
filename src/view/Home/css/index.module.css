@@ -54,7 +54,6 @@
 .homeRightjianjie_img{
     width: 100px;
     height: 100px;
-    background: red;
     margin-right: 20px;
 }
 .homeRightjianjie_img>img{
@@ -139,7 +138,6 @@
 .homeLeftBotdec_img{
     width:270px;
     height:316px;
-    background: red;
     margin-right: 30px;
 }
 .homeLeftBotdec_list>li{

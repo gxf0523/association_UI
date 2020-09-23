@@ -1,0 +1,55 @@
+.detailsBox{
+    background:#fff;
+}
+.centerBox{
+    width: 1170px;
+    margin: 0 auto 60px;
+}
+.textTitle{
+    font-size: 14px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    padding: 31px 0 0 0;
+}
+.PageTitle{
+    margin-top: 41px;
+    margin-bottom: 22px;
+    text-align: center;
+    font-size: 24px;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+}
+.PageTime{
+    margin-bottom: 41px;
+    text-align: center;
+    font-size: 14px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #999999;
+}
+.PageCenter{
+    font-size: 16px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    padding-bottom: 62px;
+    border-bottom: 1px solid #CBCBCB;
+    line-height: 38px;
+}
+.spinBox{
+    width: 1170px;
+    height: 550px;
+    margin: 0 auto;
+    position: relative;
+}
+:global(.ant-spin-spinning){
+    position: absolute!important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    z-index: 1;
+    opacity: 1;
+}

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styles from "./css/index.module.css";
+import axios from "../../axios";
+import Plublic from '../../common/js/Plublic';
 const graduateLogo = require('../../common/img/graduate_logo.png');
 const associationLogo = require('../../common/img/association_logo.png');
 
@@ -7,84 +9,37 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listTop: [
-                {
-                    name: '网站首页',
-                    checked: true,
-                    url: '/Home'
-                },
-                {
-                    name: '企业简介',
-                    checked: false,
-                    url: '/BriefIntroduction'
-                },
-                {
-                    name: '科技研发',
-                    checked: false,
-                    url: '/ResearchDevelopment'
-                },
-                {
-                    name: '科研服务',
-                    checked: false,
-                    url: '/Service'
-                },
-                {
-                    name: '培训教育',
-                    checked: false,
-                    url: '/Education'
-                },
-                {
-                    name: '联系我们',
-                    checked: false,
-                    url: '/ContactUs'
-                }
-            ]
+            id: Plublic.getUrlParam("id") || 0,
+            url: window.location.pathname,
+            listTop: [],
         }
     }
     componentDidMount() {
-        var windowUrl = window.location.pathname;
-        switch (windowUrl) {
-            case '/Home':
-                this.getNewlistTop(0);
-                break;
-            case '/BriefIntroduction':
-                this.getNewlistTop(1);
-                break;
-            case '/ResearchDevelopment':
-                this.getNewlistTop(2);
-                break;
-            case '/Service':
-                this.getNewlistTop(3);
-                break;
-            case '/Education':
-                this.getNewlistTop(4);
-                break;
-            case '/ContactUs':
-                this.getNewlistTop(5);
-                break;
-            default:
-        }
-
+        let that = this;
+        axios.getCateData().then(res => {
+            if (res && res.code === 1) {
+                let data = res.data.detail;
+                for (var i = 0; i < data.length; i++) {
+                    data[i].checked = false;
+                }
+                data.splice(0, 0, { name: '网站首页', url: '/Home' });
+                data[0].checked = true;
+                that.setState({
+                    listTop: data
+                })
+            }
+        });
     }
-    getNewlistTop = (index) => {
-        const listTop = this.state.listTop;
-        for (var i = 0; i < listTop.length; i++) {
-            listTop[i].checked = false;
-        }
-        listTop[index].checked = true;
+    onJump = (item) => {
+        if (item.name === '网站首页') {
+            window.location.href = '/Home';
+        } else {
+            window.location.href = '/BriefIntroduction?id=' + item.id;
 
-        this.setState({
-            listTop
-        })
-    }
-    onJump = (url) => {
-        // var NowUrl = window.location.pathname;
-        // if (NowUrl === 'Home' || NowUrl === 'BriefIntroduction' || NowUrl === 'ResearchDevelopment' || NowUrl === 'Service' || NowUrl === 'Education' || NowUrl === 'ContactUs') {
-            window.location.href = url;
-        // }
+        }
     }
     render() {
-        const { listTop } = this.state;
+        const { listTop, id, url } = this.state;
         return (
             <div className={styles.HeaderPublic}>
                 <div className={styles.headerTop}>
@@ -97,15 +52,15 @@ class Header extends Component {
                         <div className={styles.headerTopLine}></div>
                     </div>
                     <div className={styles.headerTopRight}>
-                        <img className={styles.headerTopRightImg} src={associationLogo} alt="" />
+                        {/* <img className={styles.headerTopRightImg} src={associationLogo} alt="" /> */}
                         <span className={styles.headerTopRightText}>中国医药教育协会</span>
                     </div>
                 </div>
                 <div className={styles.MaxNavWidth}>
                     <div className={styles.MinNavWidth}>
                         {
-                            listTop.map((item, index) => (
-                                <span className={item.checked ? `${styles.titleItemchecked}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item.url)}>{item.name}</span>
+                            listTop && listTop.map((item, index) => (
+                                <span className={(item.id == id || (url.includes('Home') && index == 0)) ? `${styles.titleItemchecked}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item)}>{item.name}</span>
                             ))
                         }
                     </div>
