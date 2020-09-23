@@ -3,7 +3,7 @@ import styles from "./css/index.module.css";
 import axios from "../../axios";
 import Plublic from '../../common/js/Plublic';
 const graduateLogo = require('../../common/img/graduate_logo.png');
-const associationLogo = require('../../common/img/association_logo.png');
+// const associationLogo = require('../../common/img/association_logo.png');
 
 class Header extends Component {
     constructor(props) {
@@ -60,7 +60,7 @@ class Header extends Component {
                     <div className={styles.MinNavWidth}>
                         {
                             listTop && listTop.map((item, index) => (
-                                <span className={(item.id == id || (url.includes('Home') && index == 0)) ? `${styles.titleItemchecked}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item)}>{item.name}</span>
+                                <span className={(item.id === id || (url.includes('Home') && index === 0)) ? `${styles.titleItemchecked}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item)}>{item.name}</span>
                             ))
                         }
                     </div>
