@@ -31,7 +31,8 @@ export default {
      * 时间戳转化成时间格式
      */
     gettimeFormat(timestamp) {
-        var time = new Date(timestamp*1);
+        var timestamp = timestamp && timestamp.length>10?timestamp:timestamp *1 * 1000;
+        var time = new Date(timestamp);
         var year = time.getFullYear();
         var month = time.getMonth() + 1;
         var date = time.getDate();
