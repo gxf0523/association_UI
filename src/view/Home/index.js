@@ -73,7 +73,7 @@ class Home extends Component {
                                         {
                                             homeListData.rotation_list && homeListData.rotation_list.map((item, index) => (
                                                 <div key={index}>
-                                                    <img src={Plublic.getPrefixUrl() + item.image} alt="" />
+                                                    <img src={item.image.includes('http')?item.image:Plublic.getPrefixUrl() + item.image} alt="" />
                                                 </div>
                                             ))
                                         }
@@ -104,7 +104,7 @@ class Home extends Component {
                                 <div className={styles.homeLeftBot}>
                                     <div className={styles.moduleTitle}><span>新闻动态</span></div>
                                     <div className={styles.homeLeftBotdec}>
-                                        <img className={styles.homeLeftBotdec_img} src={Rotation_news_list ? Plublic.getPrefixUrl() + Rotation_news_list.image : ''} alt="" />
+                                        <img className={styles.homeLeftBotdec_img} src={Rotation_news_list.image.includes('http')?Rotation_news_list.image:Plublic.getPrefixUrl() + Rotation_news_list.image} alt="" />
                                         <ul className={styles.homeLeftBotdec_list}>
                                             {
                                                 homeListData.article_news_list && homeListData.article_news_list.map((item, index) => (
@@ -121,7 +121,7 @@ class Home extends Component {
                                     <div className={styles.homeRightjianjie_box}>
                                         <div className={styles.homeRightjianjie_top}>
                                             <div className={styles.homeRightjianjie_img}>
-                                                <img src={article_suo_list ? Plublic.getPrefixUrl() + article_suo_list.image : ''} alt="" />
+                                                <img src={article_suo_list.image.includes('http')?article_suo_list.image:Plublic.getPrefixUrl() + article_suo_list.image} alt="" />
                                             </div>
                                             <div style={{ "display": "flex", "flexDirection": "column" }}>
                                                 <div className={styles.homeRightjianjie_title} style={{ "display": "flex", "alignItems": "baseline" }}><span>{article_suo_list && article_suo_list.author}</span><span>{article_suo_list && article_suo_list.position}</span></div>
