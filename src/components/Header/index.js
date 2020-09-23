@@ -49,12 +49,12 @@ class Header extends Component {
                             <p className={styles.headerTopCenterZ}>北京卫健基业生物技术研究所</p>
                             <p className={styles.headerTopCenterE}>Beijing WeijianJiye Institute of  Biotechnology</p>
                         </div>
-                        <div className={styles.headerTopLine}></div>
+                        {/* <div className={styles.headerTopLine}></div> */}
                     </div>
-                    <div className={styles.headerTopRight}>
-                        {/* <img className={styles.headerTopRightImg} src={associationLogo} alt="" /> */}
+                    {/* <div className={styles.headerTopRight}>
+                        <img className={styles.headerTopRightImg} src={associationLogo} alt="" />
                         <span className={styles.headerTopRightText}>中国医药教育协会</span>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.MaxNavWidth}>
                     <div className={styles.MinNavWidth}>
