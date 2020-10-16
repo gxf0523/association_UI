@@ -51,6 +51,15 @@ class Home extends Component {
     onGoText = (item) => {
         window.location.href = '/Home/JournalismDetails?id=' + item.id;
     }
+    onMore = (id) => {
+        window.location.href = '/Home/DynamicList?id=' + id;
+    }
+    onGoUrl = (url) =>{
+        if(url){
+            var tempwindow=window.open('_blank');
+            tempwindow.location=url;
+        }
+    }
     render() {
         const { dotsIndex, spinning, homeListData, isEllipsis } = this.state;
         const article_suo_list = homeListData && homeListData.article_suo_list && homeListData.article_suo_list[0];
@@ -73,7 +82,7 @@ class Home extends Component {
                                         {
                                             homeListData.rotation_list && homeListData.rotation_list.map((item, index) => (
                                                 <div key={index}>
-                                                    <img src={item.image.includes('http')?item.image:Plublic.getPrefixUrl() + item.image} alt="" />
+                                                    <img onClick={()=>this.onGoUrl(item.url)} src={item.image.includes('http')?item.image:Plublic.getPrefixUrl() + item.image} alt="" />
                                                 </div>
                                             ))
                                         }
@@ -102,9 +111,9 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className={styles.homeLeftBot}>
-                                    <div className={styles.moduleTitle}><span>新闻动态</span></div>
+                                    <div className={styles.moduleTitle}><span>新闻动态</span><b onClick={()=>this.onMore('15')}>more&gt;&gt;</b></div>
                                     <div className={styles.homeLeftBotdec}>
-                                        <img className={styles.homeLeftBotdec_img} src={Rotation_news_list.image.includes('http')?Rotation_news_list.image:Plublic.getPrefixUrl() + Rotation_news_list.image} alt="" />
+                                        <img className={styles.homeLeftBotdec_img} onClick={()=>this.onGoUrl(Rotation_news_list.url)} src={Rotation_news_list.image.includes('http')?Rotation_news_list.image:Plublic.getPrefixUrl() + Rotation_news_list.image} alt="" />
                                         <ul className={styles.homeLeftBotdec_list}>
                                             {
                                                 homeListData.article_news_list && homeListData.article_news_list.map((item, index) => (
@@ -137,7 +146,7 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className={styles.homeRightBot}>
-                                    <div className={styles.moduleTitle}><span>科研动态</span></div>
+                                    <div className={styles.moduleTitle}><span>科研动态</span><b onClick={()=>this.onMore('14')}>more&gt;&gt;</b></div>
                                     <ul className={styles.homeRightBot_list}>
                                         {
                                             homeListData.article_keyan_list && homeListData.article_keyan_list.map((item, index) => (

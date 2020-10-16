@@ -38,6 +38,17 @@ export default {
         var date = time.getDate();
         return year + '年' + this.timerFilter(month) + '月' + this.timerFilter(date) + '日';
     },
+    gettimeFormathmm(timestamp) {
+        var timestamp = timestamp && timestamp.length>10?timestamp:timestamp *1 * 1000;
+        var time = new Date(timestamp);
+        var year = time.getFullYear();
+        var month = time.getMonth() + 1;
+        var date = time.getDate();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        return year + '-' + this.timerFilter(month) + '-' + this.timerFilter(date) + ' '+ this.timerFilter(hour) + ':' + this.timerFilter(minute) + ':' + this.timerFilter(second);
+    },
     /**
      * 图片域名
      */

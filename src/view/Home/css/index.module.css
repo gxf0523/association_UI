@@ -47,6 +47,11 @@
     padding-bottom: 7px;
     border-bottom: 4px solid #990000;
 }
+.moduleTitle>b{
+    float: right;
+    color: #333;
+    cursor: pointer;
+}
 .homeRightjianjie_top{
     margin: 29px 41px 29px 30px;
     display: flex;
@@ -139,6 +144,7 @@
     width:270px;
     height:316px;
     margin-right: 30px;
+    cursor: pointer;
 }
 .homeLeftBotdec_list>li{
     width: 396px;
@@ -176,6 +182,7 @@
 }
 .homeLeftTop{
     position: relative;
+    cursor: pointer;
 }
 .homeLeftTop div,.homeLeftTop div img{
     width: 100%;
