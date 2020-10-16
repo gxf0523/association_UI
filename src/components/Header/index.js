@@ -62,7 +62,7 @@ class Header extends Component {
                     <div className={styles.MinNavWidth}>
                         {
                             listTop && listTop.map((item, index) => (
-                                <span className={(item.id === id || (url.includes('Home') && index === 0)) ? `${styles.titleItem}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item)}>{item.name}</span>
+                                <span className={(item.id === id || (url.includes('Home') && index === 0)) ? `${styles.titleItemchecked}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item)}>{item.name}</span>
                             ))
                         }
                     </div>

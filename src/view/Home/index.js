@@ -60,6 +60,9 @@ class Home extends Component {
             tempwindow.location=url;
         }
     }
+    onJump = (id) => {
+        window.location.href = '/ResearchDevelopment?id=' + 18;
+    }
     render() {
         const { dotsIndex, spinning, homeListData, isEllipsis } = this.state;
         const article_suo_list = homeListData && homeListData.article_suo_list && homeListData.article_suo_list[0];
@@ -125,7 +128,7 @@ class Home extends Component {
                                 </div>
                             </div>
                             <div className={styles.homeRight}>
-                                <div className={styles.homeRightTop}>
+                                <div className={styles.homeRightTop}  onClick={() => this.onJump(article_suo_list.id)}>
                                     <div className={styles.moduleTitle}><span>所长简介</span></div>
                                     <div className={styles.homeRightjianjie_box}>
                                         <div className={styles.homeRightjianjie_top}>
