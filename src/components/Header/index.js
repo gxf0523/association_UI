@@ -33,8 +33,10 @@ class Header extends Component {
     onJump = (item) => {
         if (item.name === '网站首页') {
             window.location.href = '/Home';
-        } else {
+        } else if (item.name === '联系我们') {
             window.location.href = '/BriefIntroduction?id=' + item.id;
+        }else {
+            window.location.href = '/ResearchDevelopment?id=' + item.id;
 
         }
     }
@@ -60,7 +62,7 @@ class Header extends Component {
                     <div className={styles.MinNavWidth}>
                         {
                             listTop && listTop.map((item, index) => (
-                                <span className={(item.id === id || (url.includes('Home') && index === 0)) ? `${styles.titleItemchecked}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item)}>{item.name}</span>
+                                <span className={(item.id === id || (url.includes('Home') && index === 0)) ? `${styles.titleItem}` : `${styles.titleItem}`} key={index} onClick={() => this.onJump(item)}>{item.name}</span>
                             ))
                         }
                     </div>

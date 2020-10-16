@@ -146,7 +146,7 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className={styles.homeRightBot}>
-                                    <div className={styles.moduleTitle}><span>科研动态</span><b onClick={()=>this.onMore('14')}>more&gt;&gt;</b></div>
+                                    <div className={styles.moduleTitle}><span>科研动态</span><b onClick={()=>this.onMore('16')}>more&gt;&gt;</b></div>
                                     <ul className={styles.homeRightBot_list}>
                                         {
                                             homeListData.article_keyan_list && homeListData.article_keyan_list.map((item, index) => (
