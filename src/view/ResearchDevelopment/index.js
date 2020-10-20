@@ -46,7 +46,16 @@ class ResearchDevelopment extends Component {
         });
     }
     onGoText = (item) => {
-        window.location.href = '/ResearchDevelopment?id=' + item.id;
+        let that = this;
+        // window.location.href = '/Home/JournalismDetails?id=' + item.id+'&headertabid='+this.state.id;
+        // window.location.href = '/ResearchDevelopment?id=' + item.id;
+        axios.getDetailData(item.id).then(res => {
+            if (res && res.code === 1) {
+                that.setState({
+                    introductionData: res.data.detail,
+                })
+            }
+        });
     }
     render() {
         const { introductionData, spinning, title, listData } = this.state;
